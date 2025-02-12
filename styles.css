@@ -1,0 +1,296 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #fff; /* White text for contrast */
+    background-color: #1a1a1a; /* Dark background */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8a2be2; /* Purple */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #6a1b9a; /* Darker purple on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Home Section */
+  .home-section {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a); /* Dark gradient */
+    text-align: center;
+    padding: 150px 0;
+  }
+  
+  .home-section h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #8a2be2; /* Purple */
+    animation: fadeInDown 1.5s ease-in-out; /* Fade-in animation */
+  }
+  
+  .home-section p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  #typing-heading {
+    display: inline-block; /* Ensure the cursor stays at the end of the text */
+    border-right: 2px solid #000; /* Cursor style */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+ 
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #000; } /* Cursor color */
+  }
+
+  
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* About Section */
+  .about-section {
+    padding: 100px 0;
+    background-color: #2a2a2a; /* Slightly lighter dark background */
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #8a2be2; /* Purple */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+  }
+  
+  .about-section p {
+    color: #fff;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Projects Section */
+  .projects-section {
+    padding: 100px 0;
+    background-color: #1a1a1a; /* Dark background */
+    text-align: center;
+  }
+  
+  .projects-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #8a2be2; /* Purple */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .project-card {
+    background-color: #2a2a2a; /* Dark gray */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  .project-card img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #8a2be2; /* Purple */
+  }
+  
+  .project-card p {
+    color: #fff;
+  }
+  
+  /* Skills Section */
+  .skills-section {
+    padding: 100px 0;
+    background-color: #1a1a1a; /* Black background */
+    text-align: center;
+  }
+  
+  .skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #00ff88; /* Neon green */
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; /* Neon glow */
+    animation: glow 2s infinite alternate; /* Glow animation */
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .skill-category {
+    background-color: #2a2a2a; /* Dark gray */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); /* Neon glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skill-category:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6); /* Stronger glow on hover */
+  }
+  
+  .skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00ff88; /* Neon green */
+  }
+  
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-category li {
+    background-color: #1a1a1a; /* Black */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: #fff;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-category li:hover {
+    transform: translateX(10px); /* Slide effect on hover */
+  }
+
+  iconify-icon {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px; /* Space between icon and text */
+  }
+
+  .android-icon {
+    display: inline-block;
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    overflow: hidden;
+  }
+  
+  .android-icon iconify-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); /* Adjust the clip-path as needed */
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+    }
+    100% {
+      text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+    }
+  }
+  
+ /* Contact Section */
+.contact-section {
+    padding: 100px 0;
+    background-color: #2a2a2a; /* Dark gray */
+    text-align: center;
+  }
+  
+  .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #8a2be2; /* Purple */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+  }
+  
+  .contact-section p {
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+  }
+  
+  .icon-link {
+    color: #8a2be2; /* Purple */
+    font-size: 2.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icon-link:hover {
+    color: #6a1b9a; /* Darker purple on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1a1a1a; /* Black */
+    color: #fff;
+  }
+  
+  footer p {
+    margin: 0;
+    color: #8a2be2; /* Purple */
+  }
