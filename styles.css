@@ -13,6 +13,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+    overflow-x: hidden;
   }
   
   h1, h2, h3 {
@@ -42,11 +43,16 @@ body {
   }
   
   .home-section h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
     margin-bottom: 10px;
     color: #8a2be2; /* Purple */
     animation: fadeInDown 1.5s ease-in-out; /* Fade-in animation */
   }
+  @media (max-width: 480px) {
+    .home-section h1 {
+        font-size: 2.5rem; /* Even smaller font size for very small screens */
+    }
+}
 /*----------------------------------------------NAV BAR-------------------------------------*/
   /* Navbar Styles */
 .navbar {
@@ -80,7 +86,9 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 15px; /* Fix spacing */
+  gap: 10px; /* Fix spacing */
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -100,58 +108,76 @@ body {
   cursor: pointer;
 }
 
-/* Responsive Design */
+/* Existing responsive design block for Navbar - MODIFY THIS */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Hide links */
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
+    .navbar {
+        padding: 10px 15px;
+        /* Keep other styles */
+    }
 
-  .nav-links.active {
-    display: flex; /* Show menu */
-  }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the navbar */
+        right: 0; /* Align directly to the right edge of the screen/parent */
+        background-color: #333;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 150px; /* Set a fixed width for the mobile menu, adjust as needed */
+        /* OR use max-content or min-content: */
+        /* width: max-content; */ /* This tries to fit content without wrapping */
+        /* min-width: 120px; */ /* Ensure it's not too small */
+        /* max-width: 90%; */ /* Prevent it from being too wide on larger mobiles */
+        z-index: 999;
+        /* Add a transform to slide it in nicely (optional but good UX) */
+        transform: translateX(100%); /* Start off-screen to the right */
+        transition: transform 0.3s ease-out; /* Smooth transition */
+    }
 
-  .menu-toggle {
-    display: block; /* Show menu icon */
-  }
-}
-.nav-links {
-  display: flex;
-  list-style: none;
-}
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+        transform: translateX(0); /* Slide into view */
+    }
 
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-}
+    .nav-links li {
+        margin: 10px 0;
+        text-align: right; /* Keep text aligned right within the menu */
+        width: 100%; /* Ensure list items take full width of the dropdown */
+    }
 
-/* Responsive style */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    padding: 10px;
-    border-radius: 5px;
-  }
+    .nav-links a {
+        color: #fff;
+        padding: 5px 0;
+        display: block;
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        order: 1; /* Adjust order if needed, so the menu button is more prominent */
+        font-size: 1.8rem; /* Make it a bit larger for easier tapping */
+        padding: 5px; /* Add some padding around the icon for easier tapping */
+    }
 
-  .menu-toggle {
-    display: block;
-  }
+    /* Resume Button on Mobile */
+    .resume-btn {
+        order: 2; /* Ensure the resume button is not obscuring the menu toggle */
+        padding: 8px 12px; /* Adjust padding for mobile */
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+
+    /* For very small screens (e.g., old phones) */
+    @media (max-width: 400px) {
+        .nav-links {
+            width: 120px; /* Adjust dropdown width for very small screens */
+        }
+        .resume-btn {
+            font-size: 0.8rem;
+            padding: 6px 10px;
+        }
+    }
 }
 /*--------------------------------------------------------------------------*/
   
