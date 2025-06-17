@@ -11,13 +11,25 @@
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 <body>
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <a href="files\Juraij-Bin-Abdulkhadir-international.pdf" class="resume-btn" download>Download Resume</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+</nav>
+
+
+
   <!-- Home Section -->
 <section id="home" class="home-section">
     <div class="container">
-        <h1 id="typing-heading">
-            Hi, <!-- "Hi," is always visible -->
-            
-          </h1>
+        <h1 id="typing-heading"></h1>
       <p>Flutter Developer | 1+ Years of Experience</p>
       <a href="#projects" class="btn">View My Work</a>
     </div>
@@ -29,12 +41,14 @@
     <div class="container">
       <h2>About Me</h2>
       <p>
-        Flutter Developer with solid experience in cross-platform mobile
-        applications. Skilled in creating responsive, beautiful UIs and in
-        implementing efficient state management. Proficient in APIs, Firebase
-        authentication, and payment gateways integration. Dedicated to delivering
-        high-quality, user-centric solutions that are aligned with business goals and
-        user experiences.
+        I’m Juraij Bin Abdul Khadir, a passionate Flutter developer with over 1 year of hands-on experience building cross-platform mobile applications. 
+        My journey began with a curiosity for crafting clean, responsive, and efficient UIs — and quickly grew into a commitment to building user-focused apps that
+         solve real problems.
+        I’ve developed several personal and client-side apps using Flutter, integrating technologies like Firebase, Supabase, and REST APIs.
+        I’m skilled in state management (Provider), UI/UX design using Figma, and incorporating tools like Postman, Git, and Android Studio in my workflow.
+        What sets me apart is my ability to take an idea from concept to deployment — handling UI design, backend integration, and testing with a clean, maintainable codebase.
+        I enjoy working on solo projects but am equally excited to collaborate with teams and continuously learn new skills in mobile app development.
+        Whether it's a minimalistic expense tracker, a joke generator app, or a more complex business app, I aim to deliver fast, elegant, and scalable solutions.
       </p>
     </div>
   </section>
@@ -45,18 +59,52 @@
       <h2>My Projects</h2>
       <div class="project-grid">
         <div class="project-card">
-          <img src="images/project1.jpg" alt="Project Tracky">
+          <img src="images/project1.png" onerror="this.src='images/default.jpg'" alt="Project Tracky">
           <h3>Project Tracky</h3>
-          <p>Although it is a cheesy name , It is a Flutter app for expense tracking .
-             This is a simple and minimalistic mini app developed using flutter.
-             It is open without any authentication or credentials and anybody can use it.</p>
+          <p>
+             Tracky may sound cheesy, but it's serious about your spending! This is a simple,
+             minimalistic expense tracker built entirely with Flutter.
+             Designed for speed and ease, Tracky helps you keep an eye on your daily expenses without the clutter.
+            <br><br>
+             No logins, no credentials — just open and start tracking.
+             Whether you're budgeting your day or just want a record of where your money goes, Tracky keeps it clean and convenient.
+            <br><br>
+            🎯 Features:<br>
+            💸 Add and manage daily expenses effortlessly<br>
+            📊 Minimal and intuitive UI — no distractions<br>
+            🔓 Open access — no sign-up or login needed<br>
+            ⚡ Fast, lightweight, and perfect for quick tracking<br>
+            🎯 Ideal for personal use or testing Flutter concepts
+            <br><br>
+            Whether you're managing coffee runs or monthly budgets, Tracky helps you stay on track — no strings attached.
+  </p>
           <a href="https://tracky-github.vercel.app" class="btn" target="_blank">View Project</a>
         </div>
         <div class="project-card">
-          <img src="images/project2.jpg" alt="Project 2">
-          <h3>Project 2</h3>
-          <p>A Flutter app for [description].</p>
-          <a href="https://tracky-github.vercel.app" class="btn" target="_blank">View Project</a>
+          <img src="images/project2.png" onerror="this.src='images/default.jpg'" alt="Project 2">
+
+          <h3>Just Jokes</h3>
+          <p>
+            Just Jokes is your pocket-sized dose of laughter! Built with Flutter,
+             this minimal and user-friendly app generates a wide variety of random jokes with just a tap.
+             Whether you're having a rough day or just need a quick giggle,
+              Just Jokes delivers clean, funny, and refreshing humor instantly.
+            <br><br>
+            <br><br>
+            With a focus on simplicity and fun, Just Jokes is perfect for anyone who loves light-hearted humor without distractions.
+            Whether you're on a break, commuting, or just bored at home, the app serves as a quick escape from the mundane. No ads, no clutter — just pure,
+            refreshing jokes that bring a smile to your face, one punchline at a time.
+            <br><br>
+            <br><br>
+            <br>
+            🎯 Features:<br>
+            😂 Instantly generate random jokes<br>
+            🧠 Clean and simple UI for a smooth experience<br>
+            📱 Lightweight and fast — perfect for a quick laugh anytime<br>
+            ☁️ Fetches jokes from a live API (always fresh!)<br>
+            🌙 Dark-themed minimal design for eye comfort
+            </p>
+          <a href="https://just-jokes.vercel.app" class="btn" target="_blank">View Project</a>
         </div>
         <!-- Add more project cards -->
       </div>
@@ -102,6 +150,8 @@
           <ul>
             <li>Dart</li>
             <li>Python (Basics)</li>
+            <li>HTML5</li>
+            <li>CSS</li>
           </ul>
         </div>
       </div>
@@ -133,4 +183,13 @@
   </footer>
 </body>
 <script src="scripts.js"></script>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 </html>
