@@ -60,7 +60,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background: rgba(42, 42, 42, 1); /* Blends with background */
-  padding: 15px 20px;
+  padding: 15px 10px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -88,7 +88,7 @@ body {
   display: flex;
   gap: 10px; /* Fix spacing */
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 .nav-links li {
@@ -112,38 +112,55 @@ body {
 @media (max-width: 768px) {
     .navbar {
         padding: 10px 15px;
-        /* Keep other styles */
+        /* Ensure hamburger and resume button are correctly ordered */
+        /* display: flex; /* Already set in main .navbar */
+        /* justify-content: space-between; /* Already set in main .navbar */
     }
 
+    /* Keep the resume button on the right */
+    .resume-btn {
+        order: 2; /* Ensures it stays on the right side of the flex container */
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        margin-right: 15px;
+    }
+
+    /* Position the hamburger on the left */
+    .menu-toggle {
+        display: block;
+        color: #fff;
+        order: 1; /* Ensures it stays on the left side of the flex container */
+        font-size: 1.8rem;
+        padding: 5px;
+    }
+
+    /* === Crucial Changes for the Mobile Menu Popup === */
     .nav-links {
-        display: none;
+        display: none; /* Hidden by default */
         flex-direction: column;
-        position: absolute;
+        position: absolute; /* Position relative to the nearest positioned ancestor (navbar) */
         top: 60px; /* Position below the navbar */
-        right: 0; /* Align directly to the right edge of the screen/parent */
+        left: 0; /* <<< CHANGE: Align directly to the left edge */
         background-color: #333;
         padding: 15px;
-        border-radius: 8px;
+        border-radius: 0 8px 8px 0; /* Rounded corners only on the right side of the popup */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        width: 150px; /* Set a fixed width for the mobile menu, adjust as needed */
-        /* OR use max-content or min-content: */
-        /* width: max-content; */ /* This tries to fit content without wrapping */
-        /* min-width: 120px; */ /* Ensure it's not too small */
-        /* max-width: 90%; */ /* Prevent it from being too wide on larger mobiles */
+        width: 70%; /* Set a percentage width (e.g., 70% of screen width) */
+        max-width: 250px; /* Or a max-width to prevent it from being too wide on tablets */
         z-index: 999;
-        /* Add a transform to slide it in nicely (optional but good UX) */
-        transform: translateX(100%); /* Start off-screen to the right */
+        /* === Animation Changes === */
+        transform: translateX(-100%); /* <<< CHANGE: Start completely off-screen to the left */
         transition: transform 0.3s ease-out; /* Smooth transition */
     }
 
     .nav-links.active {
         display: flex; /* Show menu when active */
-        transform: translateX(0); /* Slide into view */
+        transform: translateX(0); /* <<< CHANGE: Slide into view from the left */
     }
 
     .nav-links li {
         margin: 10px 0;
-        text-align: right; /* Keep text aligned right within the menu */
+        text-align: left; /* <<< CHANGE: Align text to the left within the menu */
         width: 100%; /* Ensure list items take full width of the dropdown */
     }
 
@@ -153,25 +170,10 @@ body {
         display: block;
     }
 
-    .menu-toggle {
-        display: block;
-        color: #fff;
-        order: 1; /* Adjust order if needed, so the menu button is more prominent */
-        font-size: 1.8rem; /* Make it a bit larger for easier tapping */
-        padding: 5px; /* Add some padding around the icon for easier tapping */
-    }
-
-    /* Resume Button on Mobile */
-    .resume-btn {
-        order: 2; /* Ensure the resume button is not obscuring the menu toggle */
-        padding: 8px 12px; /* Adjust padding for mobile */
-        font-size: 0.9rem; /* Adjust font size for mobile */
-    }
-
     /* For very small screens (e.g., old phones) */
     @media (max-width: 400px) {
         .nav-links {
-            width: 120px; /* Adjust dropdown width for very small screens */
+            width: 80%; /* Adjust dropdown width for very small screens */
         }
         .resume-btn {
             font-size: 0.8rem;
